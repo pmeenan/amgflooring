@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Carousel from '../../components/Carousel';
+import { getCollection } from 'astro:content';
+import { ArrowLeft, Calendar } from 'lucide-react';
+
+export async function getStaticPaths() {
+  const galleryEntries = await getCollection('gallery');
+  return galleryEntries.map(entry => ({
+    params: { project: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<Layout title={`${entry.data.title} | AMG Flooring LLC`}>
+  <div class="bg-navy py-12 pt-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="/gallery" class="inline-flex items-center text-warm-oak hover:text-white transition-colors mb-6 text-sm font-medium">
+        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Gallery
+      </a>
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h1 class="font-display text-3xl md:text-5xl font-bold text-white mb-4">{entry.data.title}</h1>
+          {entry.data.description && (
+            <p class="text-lg text-slate-300 max-w-2xl">{entry.data.description}</p>
+          )}
+        </div>
+        
+        {entry.data.date && (
+          <div class="flex items-center text-slate-400 bg-white/5 px-4 py-2 rounded-lg backdrop-blur-sm self-start md:self-auto">
+            <Calendar className="w-5 h-5 mr-2 text-warm-oak" />
+            <time datetime={entry.data.date.toString()}>
+              {new Date(entry.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+            </time>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <section class="py-12 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* React Carousel Component driven by frontmatter image array */}
+      <Carousel client:load images={entry.data.images} />
+      
+      <div class="mt-16 text-center">
+        <h2 class="text-2xl font-display font-bold text-navy mb-4">Inspired by this project?</h2>
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 shadow-md font-medium rounded-md text-navy bg-warm-oak hover:bg-[#c2a38c] transition-colors">
+          Start Your Transformation
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

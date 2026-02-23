@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+---
+
+<Layout title="Contact Us">
+  <div class="bg-navy py-16 md:py-24 pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <h1 class="font-display text-4xl md:text-5xl font-bold mb-4">Contact AMG Flooring</h1>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto">Get in touch for a free estimate or to discuss your next project.</p>
+    </div>
+  </div>
+
+  <section class="py-20 bg-off-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        {/* Contact Information Cards */}
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
+            <Phone className="w-8 h-8 text-warm-oak" />
+          </div>
+          <h3 class="font-bold text-navy text-xl mb-2">Phone</h3>
+          <a href="tel:5712859450" class="text-slate-600 hover:text-navy transition-colors text-lg font-medium mb-2">(571) 285-9450</a>
+          <p class="text-sm text-slate-400">Call for immediate assistance directly to the owner.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
+            <Mail className="w-8 h-8 text-warm-oak" />
+          </div>
+          <h3 class="font-bold text-navy text-xl mb-2">Email</h3>
+          <a href="mailto:gashi709@hotmail.com" class="text-slate-600 hover:text-navy transition-colors text-lg font-medium mb-2">gashi709@hotmail.com</a>
+          <p class="text-sm text-slate-400">Send us details about your project. We aim to reply within 24h.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+          <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mb-6">
+            <Clock className="w-8 h-8 text-warm-oak" />
+          </div>
+          <h3 class="font-bold text-navy text-xl mb-4">Hours</h3>
+          <ul class="text-slate-600 space-y-2 w-full text-sm">
+            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-medium text-navy">Mon - Sat:</span> <span>8am - 6pm</span></li>
+            <li class="flex justify-between"><span class="font-medium text-navy">Sunday:</span> <span>Closed</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

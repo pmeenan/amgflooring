@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('gallery');
+
+// Sort by date descending
+projects.sort((a, b) => {
+  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+  return dateB - dateA;
+});
+---
+
+<Layout title="Project Gallery">
+  <div class="bg-navy py-16 md:py-24 pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+      <h1 class="font-display text-4xl md:text-5xl font-bold mb-4">Project Gallery</h1>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto">Explore our recent hardwood, LVP, and remodeling transformations.</p>
+    </div>
+  </div>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {projects.length === 0 ? (
+        <div class="text-center py-20 text-slate-500">
+           <p>No gallery projects found yet. Add data files to `src/content/gallery`.</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <a href={`/gallery/${project.id}`} class="group block">
+              <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm relative mb-4">
+                {/* Fallback pattern */}
+                <div class="absolute inset-0 bg-slate-200"></div>
+                
+                <div 
+                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  style={`background-image: url('${project.data.coverImage}')`}
+                ></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                
+                <div class="absolute bottom-6 left-6 right-6">
+                  <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-warm-oak transition-colors">{project.data.title}</h3>
+                  <p class="text-sm text-slate-200">
+                    {project.data.images.length} Photos
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/",
+    "/_astro/*",
+    "/favicon.png",
+    "/robots.txt",
+    "/images/hero-image.jpg",
+    "/images/services/bathroom.png",
+    "/images/services/carpet.png",
+    "/images/services/hardwood.png",
+    "/images/services/lvp.png",
+    "/images/services/stairs.png",
+    "/about",
+    "/contact",
+    "/gallery/*",
+    "/service-area",
+    "/services"
+  ]
+}

@@ -1,0 +1,87 @@
+---
+import { Phone, Mail, MapPin, HardHat, ShieldCheck, Clock } from 'lucide-react';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-navy text-slate-300 pt-16 pb-8 border-t-4 border-warm-oak">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      {/* Brand & About */}
+      <div class="space-y-4">
+        <a href="/" class="font-display font-bold text-2xl text-white tracking-tight block mb-4">
+          AMG <span class="text-warm-oak">Flooring</span> LLC
+        </a>
+        <p class="text-sm leading-relaxed text-slate-400">
+          With over 20 years of craftsmanship, we specialize in high-quality hardwood, LVP, LVT, carpet installation, and complete bathroom remodeling for homes in Northern Virginia.
+        </p>
+        <div class="flex space-x-4 pt-2">
+            <div class="flex items-center space-x-2 text-sm text-slate-400">
+                <ShieldCheck className="w-5 h-5 text-warm-oak" />
+                <span>Licensed & Insured</span>
+            </div>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div>
+        <h3 class="text-white font-semibold mb-6 text-lg">Quick Links</h3>
+        <ul class="space-y-3 text-sm">
+          {['Home', 'About Us', 'Services', 'Gallery', 'Service Area', 'Contact Us'].map((item) => (
+            <li>
+              <a href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} class="hover:text-warm-oak transition-colors flex items-center">
+                <span class="mr-2 text-warm-oak text-xs">▸</span> {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Services */}
+      <div>
+        <h3 class="text-white font-semibold mb-6 text-lg">Our Services</h3>
+        <ul class="space-y-3 text-sm">
+          {['Hardwood Flooring', 'LVP & LVT Installation', 'Carpet Installation', 'Stairs & Handrails', 'Bathroom Remodeling'].map((item) => (
+            <li>
+              <a href="/services" class="hover:text-warm-oak transition-colors flex items-center">
+                <span class="mr-2 text-warm-oak text-xs">▸</span> {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div>
+        <h3 class="text-white font-semibold mb-6 text-lg">Contact Us</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start">
+             <MapPin className="w-5 h-5 mr-3 text-warm-oak flex-shrink-0 mt-0.5" />
+             <span>Northern Virginia & <br/>DC Metro Area</span>
+          </li>
+          <li>
+            <a href="tel:5712859450" class="flex items-center hover:text-white transition-colors">
+              <Phone className="w-5 h-5 mr-3 text-warm-oak flex-shrink-0" />
+              (571) 285-9450
+            </a>
+          </li>
+          <li>
+            <a href="mailto:gashi709@hotmail.com" class="flex items-center hover:text-white transition-colors">
+              <Mail className="w-5 h-5 mr-3 text-warm-oak flex-shrink-0" />
+              gashi709@hotmail.com
+            </a>
+          </li>
+          <li class="flex items-start">
+             <Clock className="w-5 h-5 mr-3 text-warm-oak flex-shrink-0 mt-0.5" />
+             <span>Mon - Sat: 8:00 AM - 6:00 PM<br/>Sun: Closed</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-700/50 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+      <p>&copy; {currentYear} AMG Flooring LLC. All rights reserved.</p>
+      <p class="mt-2 md:mt-0">Owner: Armend Gashi</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,76 @@
+---
+import { Star, Quote } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: 'Sarah Jenkins',
+    location: 'Fairfax, VA',
+    text: 'AMG Flooring completely transformed our first floor. The hardwood installation was flawless, and Armend was professional from start to finish. Highly recommended!',
+    rating: 5
+  },
+  {
+    name: 'Michael T.',
+    location: 'Arlington, VA',
+    text: 'We hired them for a full master bathroom remodel and new LVP flooring in the basement. The attention to detail is evident in every corner. Truly master craftsmen.',
+    rating: 5
+  },
+  {
+    name: 'Jessica & David',
+    location: 'Alexandria, VA',
+    text: '20 years of experience speaks for itself. They fixed a terrible carpet job from another contractor and made our stairs look brand new with beautiful handrails.',
+    rating: 5
+  }
+];
+---
+
+<section class="py-24 bg-white border-t border-slate-100 relative overflow-hidden">
+  
+  {/* Decorative Background Elements */}
+  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-warm-oak/5 blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-navy/5 blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-sm font-bold text-warm-oak uppercase tracking-wider mb-2">Client Success</h2>
+      <h3 class="text-3xl md:text-4xl font-display font-bold text-navy mb-6">Trusted by Homeowners</h3>
+      <div class="flex justify-center items-center space-x-1 mb-4">
+        {[...Array(5)].map(() => (
+          <Star className="w-5 h-5 fill-warm-oak text-warm-oak" />
+        ))}
+      </div>
+      <p class="text-slate-600">
+        Don't just take our word for it—read what our satisfied customers across Northern Virginia have to say.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t) => (
+        <div class="bg-off-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full relative">
+          <Quote className="absolute top-6 right-6 w-10 h-10 text-warm-oak/20" />
+          
+          <div class="flex space-x-1 mb-6">
+            {[...Array(t.rating)].map(() => (
+              <Star className="w-4 h-4 fill-warm-oak text-warm-oak" />
+            ))}
+          </div>
+          
+          <p class="text-slate-700 leading-relaxed mb-8 flex-grow italic">
+            "{t.text}"
+          </p>
+          
+          <div class="flex items-center mt-auto pt-6 border-t border-slate-200">
+            <div class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-bold font-display mr-4">
+              {t.name.charAt(0)}
+            </div>
+            <div>
+              <p class="font-semibold text-navy text-sm">{t.name}</p>
+              <p class="text-slate-500 text-xs">{t.location}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

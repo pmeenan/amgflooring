@@ -1,0 +1,71 @@
+---
+import { ArrowRight, Hammer, Layers, Scissors, Bath } from 'lucide-react';
+
+const homeServices = [
+  {
+    title: 'Hardwood Floors',
+    description: 'Expert installation, meticulous sanding, and flawless finishing to bring timeless elegance to your home.',
+    icon: Hammer,
+    href: '/services#hardwood'
+  },
+  {
+    title: 'LVP & LVT',
+    description: 'Durable, waterproof, and visually stunning Luxury Vinyl Plank and Tile for any room in your house.',
+    icon: Layers,
+    href: '/services#lvp-lvt'
+  },
+  {
+    title: 'Bathroom Remodeling',
+    description: 'Complete transformation of your bathroom space with premium tiling and modern fixtures.',
+    icon: Bath,
+    href: '/services#bathroom'
+  },
+  {
+    title: 'Carpet Installation',
+    description: 'Plush, comfortable, and professionally installed carpets for bedrooms, living areas, and stairs.',
+    icon: Scissors, // Closest generic representation for carpet cutting
+    href: '/services#carpet'
+  }
+];
+---
+
+<section class="py-24 bg-off-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-sm font-bold text-warm-oak uppercase tracking-wider mb-2">Our Expertise</h2>
+      <h3 class="text-3xl md:text-4xl font-display font-bold text-navy mb-6">Mastering Every Surface</h3>
+      <p class="text-slate-600 text-lg">
+        From custom hardwood designs to full bathroom renovations, we deliver exceptional results tailored to your vision and lifestyle.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {homeServices.map((service) => {
+        const Icon = service.icon;
+        return (
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group">
+            <div class="w-14 h-14 bg-slate-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy transition-colors duration-300">
+              <Icon className="w-7 h-7 text-navy group-hover:text-warm-oak transition-colors duration-300" />
+            </div>
+            <h4 class="text-xl font-bold text-navy mb-3">{service.title}</h4>
+            <p class="text-slate-600 mb-6 line-clamp-3">
+              {service.description}
+            </p>
+            <a href={service.href} class="inline-flex items-center text-warm-oak font-semibold group-hover:text-navy transition-colors">
+              Learn more
+              <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+        );
+      })}
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="/services" class="inline-flex items-center justify-center px-6 py-3 border border-slate-300 shadow-sm text-base font-medium rounded-md text-navy bg-white hover:bg-slate-50 transition-colors">
+        View All Services
+      </a>
+    </div>
+
+  </div>
+</section>

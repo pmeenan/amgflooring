@@ -1,0 +1,23 @@
+{
+    "title": "Classic Oak Restoration in McLean",
+    "description": "Full sanding, stain matching, and refinishing of 1,200 sq ft of red oak flooring in a historic McLean home.",
+    "date": "2023-10-15T00:00:00.000Z",
+    "coverImage": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "images": [
+        {
+            "src": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "alt": "Finished red oak living room",
+            "caption": "The completed living room showcasing a rich, warm stain."
+        },
+        {
+            "src": "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "alt": "Hallway tracking into the dining area",
+            "caption": "Seamless transition spanning the hallway into the dining space."
+        },
+        {
+            "src": "https://images.unsplash.com/photo-1600607688969-a5bfcd64bd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            "alt": "Close up of the wood grain",
+            "caption": "Detailed view of the restored red oak grain and durable satin finish."
+        }
+    ]
+}

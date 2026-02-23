@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import Testimonials from '../components/Testimonials.astro';
+---
+
+<Layout 
+  title="Home" 
+  description="AMG Flooring LLC provides expert hardwood floor installation, refinishing, LVP/LVT, carpet, and custom bathroom remodeling across Northern Virginia. Proudly serving Fairfax County, Loudoun County, Prince William County, Arlington, Alexandria, Manassas, Gainesville, and Ashburn."
+>
+	<Hero />
+	
+	{/* Brief About Snippet */}
+	<section class="py-20 bg-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+				<div class="mb-10 lg:mb-0 relative">
+					<div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+						{/* Placeholder for high-quality owner photo or finished project */}
+						<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center"></div>
+					</div>
+					{/* Decorative offset border */}
+					<div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-warm-oak rounded-2xl z-0 hidden md:block"></div>
+				</div>
+				
+				<div>
+					<h2 class="text-sm font-bold text-warm-oak uppercase tracking-wider mb-2">About AMG Flooring</h2>
+					<h3 class="text-3xl md:text-4xl font-display font-bold text-navy mb-6">Craftsmanship Built on 20+ Years of Experience</h3>
+					<p class="text-slate-600 text-lg mb-6 leading-relaxed">
+						Led by Armend Gashi, AMG Flooring LLC has been the trusted name in Northern Virginia for premium flooring installations and complete remodels. Our commitment is simple: unparalleled quality, honest pricing, and results that exceed expectations.
+					</p>
+					<p class="text-slate-600 text-lg mb-8 leading-relaxed">
+						Whether you are looking to install classic hardwood, durable luxury vinyl, or embark on a complete bathroom transformation, our skilled team brings precision to every corner of your home.
+					</p>
+					
+					<div class="flex items-center space-x-6">
+						<div class="flex items-center">
+							<div class="text-4xl font-display font-bold text-navy mr-3">20+</div>
+							<div class="text-xs text-slate-500 uppercase tracking-wide font-semibold leading-tight">Years<br/>Experience</div>
+						</div>
+						<div class="w-px h-12 bg-slate-200"></div>
+						<div class="flex items-center">
+							<div class="text-4xl font-display font-bold text-navy mr-3">100%</div>
+							<div class="text-xs text-slate-500 uppercase tracking-wide font-semibold leading-tight">Satisfaction<br/>Guarantee</div>
+						</div>
+					</div>
+
+					<div class="mt-10">
+						<a href="/about" class="text-navy font-semibold hover:text-warm-oak transition-colors inline-flex items-center">
+							Read Our Full Story
+							<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<ServiceGrid />
+	
+	<Testimonials />
+
+	{/* Final CTA Strip */}
+	<section class="bg-navy-light py-16 border-t-4 border-warm-oak">
+		<div class="max-w-4xl mx-auto px-4 text-center">
+			<h2 class="text-3xl font-display font-bold text-white mb-4">Ready to Transform Your Home?</h2>
+			<p class="text-slate-300 text-lg mb-8">Contact us today for a free, no-obligation consultation and estimate.</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<a href="tel:5712859450" class="bg-white hover:bg-slate-100 text-navy font-bold px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center">
+					<svg class="w-5 h-5 mr-2 text-warm-oak" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+					Call Now
+				</a>
+				<a href="/contact" class="bg-warm-oak hover:bg-white text-navy font-bold px-8 py-3 rounded-md transition-colors inline-flex items-center justify-center">
+					Message Us
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
