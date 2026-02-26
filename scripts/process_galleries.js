@@ -89,23 +89,21 @@ async function processGalleries() {
         // Ensure "after-1" exists for the cover
         const after1File = allAfters.find(f => f.startsWith('after-1.'));
         if (after1File) {
-            const ext = path.extname(after1File);
-            const destName = `cover${ext}`;
-            fs.copyFileSync(path.join(sourceFolder, after1File), path.join(destPublicFolder, destName));
+            const destName = `cover.jpg`;
+            await processImage(path.join(sourceFolder, after1File), path.join(destPublicFolder, destName));
             coverImage = `/images/gallery/${folder}/${destName}`;
         } else if (allAfters.length > 0) {
             // Fallback if no explicit after-1
-            const ext = path.extname(allAfters[0]);
-            const destName = `cover${ext}`;
-            fs.copyFileSync(path.join(sourceFolder, allAfters[0]), path.join(destPublicFolder, destName));
+            const destName = `cover.jpg`;
+            await processImage(path.join(sourceFolder, allAfters[0]), path.join(destPublicFolder, destName));
             coverImage = `/images/gallery/${folder}/${destName}`;
         }
 
         // Process all strictly after images and generate composites
         for (const afterFile of allAfters) {
-            const ext = path.extname(afterFile);
-            const destName = afterFile;
-            fs.copyFileSync(path.join(sourceFolder, afterFile), path.join(destPublicFolder, destName));
+            const baseName = path.basename(afterFile, path.extname(afterFile));
+            const destName = `${baseName}.jpg`;
+            await processImage(path.join(sourceFolder, afterFile), path.join(destPublicFolder, destName));
             finalImages.push({ src: `/images/gallery/${folder}/${destName}`, alt: "Finished result" });
 
             // Check if there is a matching before image to create a composite
@@ -130,8 +128,10 @@ async function processGalleries() {
 
         // Copy progress photos
         for (const progFile of progresses) {
-            fs.copyFileSync(path.join(sourceFolder, progFile), path.join(destPublicFolder, progFile));
-            finalImages.push({ src: `/images/gallery/${folder}/${progFile}`, alt: "Work in progress" });
+            const baseName = path.basename(progFile, path.extname(progFile));
+            const destName = `${baseName}.jpg`;
+            await processImage(path.join(sourceFolder, progFile), path.join(destPublicFolder, destName));
+            finalImages.push({ src: `/images/gallery/${folder}/${destName}`, alt: "Work in progress" });
         }
 
         // Generate JSON
@@ -197,11 +197,22 @@ async function createBeforeAfterComposite(beforePath, afterPath, outPath) {
                     top: 0, left: HALF_WIDTH - 2
                 }
             ])
-            .jpeg({ quality: 90 })
+            .jpeg({ quality: 85 })
             .toFile(outPath);
 
     } catch (error) {
         console.error("Error creating composite:", error);
+    }
+}
+
+async function processImage(inputPath, outputPath) {
+    try {
+        await sharp(inputPath)
+            .resize(1024, 1024, { fit: 'inside', withoutEnlargement: true })
+            .jpeg({ quality: 85 })
+            .toFile(outputPath);
+    } catch (error) {
+        console.error(`Error processing image ${inputPath}:`, error);
     }
 }
 
