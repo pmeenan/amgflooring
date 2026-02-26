@@ -1,0 +1,35 @@
+{
+    "group": "Flooring",
+    "order": 4,
+    "coverImage": "/images/gallery/flooring-4/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/flooring-4/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-4/after-2.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-4/before-after-2.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/flooring-4/after-3.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-4/before-after-3.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/flooring-4/after-4.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-4/after-5.jpg",
+            "alt": "Finished result"
+        }
+    ]
+}

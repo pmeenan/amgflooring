@@ -1,0 +1,31 @@
+{
+    "group": "Bathrooms",
+    "order": 3,
+    "coverImage": "/images/gallery/bathrooms-3/cover.jpeg",
+    "images": [
+        {
+            "src": "/images/gallery/bathrooms-3/after-1.jpeg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-3/after-2.jpeg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-3/after-3.jpeg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-3/after-4.jpeg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-3/after-5.jpeg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-3/after-6.jpeg",
+            "alt": "Finished result"
+        }
+    ]
+}

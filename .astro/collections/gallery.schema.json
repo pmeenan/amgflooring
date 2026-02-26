@@ -4,27 +4,11 @@
     "gallery": {
       "type": "object",
       "properties": {
-        "title": {
+        "group": {
           "type": "string"
         },
-        "description": {
-          "type": "string"
-        },
-        "date": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
+        "order": {
+          "type": "number"
         },
         "coverImage": {
           "type": "string"
@@ -38,9 +22,6 @@
                 "type": "string"
               },
               "alt": {
-                "type": "string"
-              },
-              "caption": {
                 "type": "string"
               }
             },
@@ -56,7 +37,8 @@
         }
       },
       "required": [
-        "title",
+        "group",
+        "order",
         "coverImage",
         "images"
       ],

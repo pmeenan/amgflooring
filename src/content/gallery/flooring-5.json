@@ -1,0 +1,31 @@
+{
+    "group": "Flooring",
+    "order": 5,
+    "coverImage": "/images/gallery/flooring-5/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/flooring-5/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-5/before-after-1.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/flooring-5/after-2.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-5/after-3.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/flooring-5/progress-1.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/flooring-5/progress-2.jpg",
+            "alt": "Work in progress"
+        }
+    ]
+}

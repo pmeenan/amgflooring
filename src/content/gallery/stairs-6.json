@@ -1,0 +1,23 @@
+{
+    "group": "Stairs and Handrails",
+    "order": 6,
+    "coverImage": "/images/gallery/stairs-6/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/stairs-6/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-6/before-after-1.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/stairs-6/after-2.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-6/after-3.jpg",
+            "alt": "Finished result"
+        }
+    ]
+}

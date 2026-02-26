@@ -14,14 +14,12 @@ const servicesCollection = defineCollection({
 const galleryCollection = defineCollection({
     type: 'data',
     schema: z.object({
-        title: z.string(),
-        description: z.string().optional(),
-        date: z.coerce.date().optional(),
+        group: z.string(),
+        order: z.number(),
         coverImage: z.string(),
         images: z.array(z.object({
             src: z.string(),
-            alt: z.string(),
-            caption: z.string().optional()
+            alt: z.string()
         }))
     })
 });

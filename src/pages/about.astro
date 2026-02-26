@@ -7,53 +7,58 @@ import { Award, Clock, ThumbsUp, Shield } from 'lucide-react';
   <div class="bg-navy py-16 md:py-24 pt-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <h1 class="font-display text-4xl md:text-5xl font-bold mb-4">About AMG Flooring</h1>
-      <p class="text-xl text-slate-300 max-w-4xl mx-auto">Two decades of dedication to the craft of custom flooring and remodeling.</p>
+      <p class="text-xl text-slate-300 max-w-4xl mx-auto">Decades of dedication to the craft of custom flooring and remodeling.</p>
     </div>
   </div>
 
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="max-w-4xl mx-auto">
         
-        <div>
-          <h2 class="text-3xl font-display font-bold text-navy mb-6">Meet Armend Gashi</h2>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-display font-bold text-navy mb-6">Meet The Team</h2>
           <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-            With over 20 years of hands-on experience in the flooring industry, Armend Gashi founded AMG Flooring LLC with a singular vision: to bring unparalleled craftsmanship and integrity to homeowners across Northern Virginia.
+            AMG Flooring LLC isn't just about floors; it's about comprehensive home transformation. We are proud to work with an excellent, hand-picked set of craftsmen whose collective expertise spans decades. 
           </p>
-          <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-            What started as an apprenticeship in traditional hardwood installation has grown into a master-level understanding of all flooring types—from classic solid wood and durable LVP, to precise tile work and full bathroom remodeling. At AMG Flooring, we don't just lay floors; we build the foundation of your home's aesthetic and comfort.
+          <p class="text-lg text-slate-600 leading-relaxed">
+            By bringing together specialized trades under one unified vision, we ensure that every aspect of your remodel is executed to the highest standards, without the headache of managing multiple independent contractors.
           </p>
-
-          <div class="grid grid-cols-2 gap-6 mt-10 text-slate-700">
-            <div class="flex flex-col items-center p-4 bg-slate-50 rounded-lg text-center">
-              <Award className="w-8 h-8 text-warm-oak mb-3" />
-              <span class="font-bold text-navy">Master Craftsmanship</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-slate-50 rounded-lg text-center">
-              <Clock className="w-8 h-8 text-warm-oak mb-3" />
-              <span class="font-bold text-navy">20+ Years Exp.</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-slate-50 rounded-lg text-center">
-              <Shield className="w-8 h-8 text-warm-oak mb-3" />
-              <span class="font-bold text-navy">Licensed & Insured</span>
-            </div>
-            <div class="flex flex-col items-center p-4 bg-slate-50 rounded-lg text-center">
-              <ThumbsUp className="w-8 h-8 text-warm-oak mb-3" />
-              <span class="font-bold text-navy">100% Satisfaction</span>
-            </div>
-          </div>
         </div>
 
-        <div class="relative">
-          <div class="aspect-square rounded-2xl overflow-hidden shadow-xl border border-slate-100">
-            {/* Placeholder for Armend's photo */}
-            <div class="w-full h-full bg-slate-200 flex items-center justify-center relative">
-               <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1588612716168-f9bbee0739ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center mix-blend-overlay opacity-80"></div>
-                <span class="relative z-10 text-navy/50 font-bold text-2xl">[Owner Photo Placeholder]</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-slate-700">
+          
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex items-start">
+            <Award className="w-10 h-10 text-warm-oak mr-5 flex-shrink-0" />
+            <div>
+              <h3 class="font-bold text-navy text-xl mb-2">Master Flooring Installers</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Specializing in intricate hardwood installations, dustless sanding, custom staining, and flawless LVP/LVT applications. Our flooring team sets the foundational standard for every project.</p>
             </div>
           </div>
-          {/* Decorative element */}
-          <div class="absolute -z-10 bottom-10 -right-10 w-full h-full bg-warm-oak/20 rounded-2xl"></div>
+
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex items-start">
+            <ThumbsUp className="w-10 h-10 text-warm-oak mr-5 flex-shrink-0" />
+            <div>
+              <h3 class="font-bold text-navy text-xl mb-2">Tile Artisans</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">From large-format porcelain to mosaic shower pans, our tile setters bring absolute precision and perfect slopes to your custom bathroom and kitchen remodels.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex items-start">
+            <Shield className="w-10 h-10 text-warm-oak mr-5 flex-shrink-0" />
+            <div>
+              <h3 class="font-bold text-navy text-xl mb-2">Licensed Electricians</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Ensuring all wiring, custom lighting installations, and heated flooring systems are integrated safely, seamlessly, and perfectly to code.</p>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex items-start">
+            <Clock className="w-10 h-10 text-warm-oak mr-5 flex-shrink-0" />
+            <div>
+              <h3 class="font-bold text-navy text-xl mb-2">Expert Plumbers</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Handling complex bathroom re-configurations, modern fixture installations, and behind-the-wall infrastructure so your water systems perform flawlessly for years to come.</p>
+            </div>
+          </div>
+
         </div>
 
       </div>

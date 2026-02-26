@@ -4,11 +4,19 @@ import { getCollection } from 'astro:content';
 
 const projects = await getCollection('gallery');
 
-// Sort by date descending
-projects.sort((a, b) => {
-  const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-  const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
-  return dateB - dateA;
+const groupedProjects = projects.reduce((acc: Record<string, any[]>, project) => {
+  const group = project.data.group;
+  if (!acc[group]) acc[group] = [];
+  acc[group].push(project);
+  return acc;
+}, {});
+
+const groups = ['Flooring', 'Bathrooms', 'Stairs and Handrails'];
+
+groups.forEach(group => {
+  if (groupedProjects[group]) {
+    groupedProjects[group].sort((a, b) => a.data.order - b.data.order);
+  }
 });
 ---
 
@@ -28,28 +36,36 @@ projects.sort((a, b) => {
            <p>No gallery projects found yet. Add data files to `src/content/gallery`.</p>
         </div>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <a href={`/gallery/${project.id}`} class="group block">
-              <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm relative mb-4">
-                {/* Fallback pattern */}
-                <div class="absolute inset-0 bg-slate-200"></div>
-                
-                <div 
-                  class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  style={`background-image: url('${project.data.coverImage}')`}
-                ></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                
-                <div class="absolute bottom-6 left-6 right-6">
-                  <h3 class="text-xl font-display font-bold text-white mb-1 group-hover:text-warm-oak transition-colors">{project.data.title}</h3>
-                  <p class="text-sm text-slate-200">
-                    {project.data.images.length} Photos
-                  </p>
+        <div class="space-y-24">
+          {groups.map(group => {
+            if (!groupedProjects[group] || groupedProjects[group].length === 0) return null;
+            return (
+              <div>
+                <h2 class="text-3xl font-display font-bold text-navy mb-10 border-b border-slate-200 pb-4">{group}</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {groupedProjects[group].map((project) => (
+                    <a href={`/gallery/${project.id}`} class="group block">
+                      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm relative mb-4">
+                        <div class="absolute inset-0 bg-slate-200"></div>
+                        
+                        <div 
+                          class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-110"
+                          style={`background-image: url('${project.data.coverImage}')`}
+                        ></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                        
+                        <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-sm border border-white/30">
+                            {project.data.images.length} Photos
+                          </span>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
-            </a>
-          ))}
+            );
+          })}
         </div>
       )}
 

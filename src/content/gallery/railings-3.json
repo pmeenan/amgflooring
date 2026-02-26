@@ -1,0 +1,51 @@
+{
+    "group": "Stairs and Handrails",
+    "order": 3,
+    "coverImage": "/images/gallery/railings-3/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/railings-3/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-1.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-2.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-3.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-4.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-5.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-6.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-7.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-8.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-9.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/railings-3/progress-10.jpg",
+            "alt": "Work in progress"
+        }
+    ]
+}

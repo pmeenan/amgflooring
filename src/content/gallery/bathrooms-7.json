@@ -1,0 +1,15 @@
+{
+    "group": "Bathrooms",
+    "order": 7,
+    "coverImage": "/images/gallery/bathrooms-7/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/bathrooms-7/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-7/before-after-1.jpg",
+            "alt": "Before and After comparison"
+        }
+    ]
+}

@@ -1,76 +1,64 @@
 ---
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Jenkins',
-    location: 'Fairfax, VA',
-    text: 'AMG Flooring completely transformed our first floor. The hardwood installation was flawless, and Armend was professional from start to finish. Highly recommended!',
+    name: "Sarah Jenkins",
+    location: "Ashburn, VA",
+    text: "AMG Flooring transformed our entire main level. They removed the old carpet and installed beautiful solid oak flooring. The crew was professional, always on time, and left our house spotless every day.",
     rating: 5
   },
   {
-    name: 'Michael T.',
-    location: 'Arlington, VA',
-    text: 'We hired them for a full master bathroom remodel and new LVP flooring in the basement. The attention to detail is evident in every corner. Truly master craftsmen.',
+    name: "David Chen",
+    location: "Fairfax, VA",
+    text: "We hired Armend to remodel our master bathroom and the results are stunning. His tile work is absolute perfection, and the pricing was very fair for the incredible quality we received.",
     rating: 5
   },
   {
-    name: 'Jessica & David',
-    location: 'Alexandria, VA',
-    text: '20 years of experience speaks for itself. They fixed a terrible carpet job from another contractor and made our stairs look brand new with beautiful handrails.',
+    name: "Michael Peterson",
+    location: "Manassas, VA",
+    text: "I highly recommend AMG for LVP installation. They installed over 1,500 sq ft in our basement in just two days. It looks amazing and has totally held up to our dogs and kids.",
     rating: 5
   }
 ];
 ---
 
-<section class="py-24 bg-white border-t border-slate-100 relative overflow-hidden">
-  
-  {/* Decorative Background Elements */}
-  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-warm-oak/5 blur-3xl"></div>
-  <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-navy/5 blur-3xl"></div>
+<section class="py-24 bg-off-white relative overflow-hidden">
+  {/* Abstract Background pattern */}
+  <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, black 1px, transparent 0); background-size: 32px 32px;"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    
-    <div class="text-center max-w-2xl mx-auto mb-16">
+    <div class="text-center mb-16">
       <h2 class="text-sm font-bold text-warm-oak uppercase tracking-wider mb-2">Client Success</h2>
-      <h3 class="text-3xl md:text-4xl font-display font-bold text-navy mb-6">Trusted by Homeowners</h3>
-      <div class="flex justify-center items-center space-x-1 mb-4">
-        {[...Array(5)].map(() => (
-          <Star className="w-5 h-5 fill-warm-oak text-warm-oak" />
-        ))}
-      </div>
-      <p class="text-slate-600">
-        Don't just take our word for it—read what our satisfied customers across Northern Virginia have to say.
-      </p>
+      <h3 class="text-3xl md:text-5xl font-display font-bold text-navy mb-4">What Our Clients Are Saying</h3>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">Don't just take our word for it—read about the experiences of homeowners across Northern Virginia who chose AMG Flooring for their transformations.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {testimonials.map((t) => (
-        <div class="bg-off-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full relative">
-          <Quote className="absolute top-6 right-6 w-10 h-10 text-warm-oak/20" />
-          
-          <div class="flex space-x-1 mb-6">
-            {[...Array(t.rating)].map(() => (
-              <Star className="w-4 h-4 fill-warm-oak text-warm-oak" />
-            ))}
-          </div>
-          
-          <p class="text-slate-700 leading-relaxed mb-8 flex-grow italic">
-            "{t.text}"
-          </p>
-          
-          <div class="flex items-center mt-auto pt-6 border-t border-slate-200">
-            <div class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-bold font-display mr-4">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full transform hover:-translate-y-1">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center font-display font-bold text-xl mr-4 flex-shrink-0">
               {t.name.charAt(0)}
             </div>
             <div>
-              <p class="font-semibold text-navy text-sm">{t.name}</p>
-              <p class="text-slate-500 text-xs">{t.location}</p>
+              <div class="font-bold text-navy text-lg">{t.name}</div>
+              <div class="text-sm text-slate-500">{t.location}</div>
             </div>
           </div>
+          
+          <div class="flex text-yellow-500 mb-6">
+            {[...Array(t.rating)].map((_) => (
+              <Star className="w-5 h-5 fill-current" />
+            ))}
+          </div>
+          
+          <blockquote class="text-slate-600 text-lg leading-relaxed flex-grow italic relative">
+            <span class="absolute -top-4 -left-2 text-6xl text-slate-200 font-serif leading-none opacity-50">"</span>
+            <span class="relative z-10">{t.text}</span>
+          </blockquote>
         </div>
       ))}
     </div>
-
   </div>
 </section>

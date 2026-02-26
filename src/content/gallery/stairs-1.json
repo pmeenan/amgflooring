@@ -1,0 +1,47 @@
+{
+    "group": "Stairs and Handrails",
+    "order": 1,
+    "coverImage": "/images/gallery/stairs-1/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/stairs-1/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-1/before-after-1.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/stairs-1/after-2.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-1/before-after-2.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/stairs-1/after-3.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-1/before-after-3.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/stairs-1/after-4.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-1/before-after-4.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/stairs-1/after-5.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/stairs-1/after-6.jpg",
+            "alt": "Finished result"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "group": "Bathrooms",
+    "order": 4,
+    "coverImage": "/images/gallery/bathrooms-4/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/bathrooms-4/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/after-2.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/after-3.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/after-4.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/progress-1.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/progress-2.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/progress-3.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/bathrooms-4/progress-4.jpg",
+            "alt": "Work in progress"
+        }
+    ]
+}

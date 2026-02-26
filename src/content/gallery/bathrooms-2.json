@@ -1,0 +1,43 @@
+{
+    "group": "Bathrooms",
+    "order": 2,
+    "coverImage": "/images/gallery/bathrooms-2/cover.jpg",
+    "images": [
+        {
+            "src": "/images/gallery/bathrooms-2/after-1.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/before-after-1.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/after-2.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/before-after-2.jpg",
+            "alt": "Before and After comparison"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/after-3.jpg",
+            "alt": "Finished result"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/progress-1.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/progress-2.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/progress-3.jpg",
+            "alt": "Work in progress"
+        },
+        {
+            "src": "/images/gallery/bathrooms-2/progress-4.jpg",
+            "alt": "Work in progress"
+        }
+    ]
+}
