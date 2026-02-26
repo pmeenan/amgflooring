@@ -155,12 +155,16 @@ async function createBeforeAfterComposite(beforePath, afterPath, outPath) {
     const HALF_WIDTH = COMPOSITE_WIDTH / 2;
 
     try {
-        // Resize and crop both images to exactly half the width and full height
+        // Auto-orient, then resize and crop both images to exactly half the width and full height
         const beforeBuf = await sharp(beforePath)
+            .rotate()
+            .withMetadata()
             .resize(HALF_WIDTH, COMPOSITE_HEIGHT, { fit: 'cover', position: 'center' })
             .toBuffer();
 
         const afterBuf = await sharp(afterPath)
+            .rotate()
+            .withMetadata()
             .resize(HALF_WIDTH, COMPOSITE_HEIGHT, { fit: 'cover', position: 'center' })
             .toBuffer();
 
@@ -186,6 +190,7 @@ async function createBeforeAfterComposite(beforePath, afterPath, outPath) {
                 background: { r: 255, g: 255, b: 255 }
             }
         })
+            .withMetadata()
             .composite([
                 { input: beforeBuf, top: 0, left: 0 },
                 { input: afterBuf, top: 0, left: HALF_WIDTH },
@@ -208,6 +213,8 @@ async function createBeforeAfterComposite(beforePath, afterPath, outPath) {
 async function processImage(inputPath, outputPath) {
     try {
         await sharp(inputPath)
+            .rotate()
+            .withMetadata()
             .resize(1024, 1024, { fit: 'inside', withoutEnlargement: true })
             .jpeg({ quality: 85 })
             .toFile(outputPath);
